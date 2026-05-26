@@ -29,3 +29,10 @@ def check_disk_space():
     print(f" Total Capacity : {total_gb:.2f} GB")
     print(f"Available Space : {free_gb:.2f} GB ({free_percent:.2f}% free )")
 
+## check if storage breaches safe threshold
+
+    if free_percent < DISK_THRESHOLD_PERCENT :
+        alert_msg = f"CRITICAL : Low dist space warning! onle {free_percent:.2f} % remaining "
+        print(f"{COLOR_RED}{COLOR_BOLD}{alert_msg}{COLOR_RESET}")
+
+
