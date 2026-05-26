@@ -43,5 +43,5 @@ def check_disk_space():
         print (f"{COLOR_GREEN} disk health st   atus is OK.{COLOR_RESET}")
 
 
-if __name__== "__main__" :
+if __name__== "__main__" : ## mean it will call the function directly without import it
     check_disk_space()
