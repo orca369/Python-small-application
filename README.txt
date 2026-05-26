@@ -1,0 +1,1 @@
+this application for testing the URl e.g google | github and give us response from the service with the the status
