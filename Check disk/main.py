@@ -35,4 +35,13 @@ def check_disk_space():
         alert_msg = f"CRITICAL : Low dist space warning! onle {free_percent:.2f} % remaining "
         print(f"{COLOR_RED}{COLOR_BOLD}{alert_msg}{COLOR_RESET}")
 
+        with open(LOG_FILE,"a") as log :
+            log.write(f"[{timestamp}] ALERT : {alert_msg} ({free_gb:.2f} GB free )\n")
+        print(f"warning written to {LOG_FILE}")
 
+    else:
+        print (f"{COLOR_GREEN} disk health status is OK.{COLOR_RESET}")
+
+
+if __name__== "__main__" :
+    check_disk_space()
