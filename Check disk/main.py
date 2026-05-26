@@ -11,7 +11,7 @@ LOG_FILE="disk_alerts.log"
 COLOR_GREEN = "\033[92m"
 COLOR_RED = "\033[91m"
 COLOR_BOLD = "\033[1m"
-COLOR_RESET = "\033[0m"
+COLOR_RESET = "\033[0m" ## adding the color reset to make terminal color back to normal color
 
 def check_disk_space():
     # Fetch total, used, and free space in bytes
@@ -40,7 +40,7 @@ def check_disk_space():
         print(f"warning written to {LOG_FILE}")
 
     else:
-        print (f"{COLOR_GREEN} disk health status is OK.{COLOR_RESET}")
+        print (f"{COLOR_GREEN} disk health st   atus is OK.{COLOR_RESET}")
 
 
 if __name__== "__main__" :
