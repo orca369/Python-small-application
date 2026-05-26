@@ -23,3 +23,9 @@ def check_disk_space():
     bytes_in_gb = 1024 ** 3
     free_gb = free / bytes_in_gb
     total_gb = total / bytes_in_gb
+
+    timestamp = datetime.datetime.now().strftime("%y-%m%d %S:%M:%S")
+    print(f"{COLOR_BOLD}--- System storage check [{timestamp}] ---{COLOR_RESET}")
+    print(f" Total Capacity : {total_gb:.2f} GB")
+    print(f"Available Space : {free_gb:.2f} GB ({free_percent:.2f}% free )")
+
