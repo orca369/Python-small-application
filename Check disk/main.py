@@ -5,13 +5,13 @@ import sys
 # configuration
 DISK_PATH ='c:\\'
 DISK_THRESHOLD_PERCENT= 15 # alert if the free space drop below this percentage
-LOG_FILE="disk_alerts.log"
+LOG_FILE = "disk_alerts.log"
 
 # terminal color
 COLOR_GREEN = "\033[92m"
 COLOR_RED = "\033[91m"
 COLOR_BOLD = "\033[1m"
-COLOR_RESET = "\033[0m" ## adding the color reset to make terminal color back to normal color
+COLOR_RESET = "\033[0m"  ## adding the color reset to make terminal color back to normal color
 
 def check_disk_space():
     # Fetch total, used, and free space in bytes
@@ -32,7 +32,7 @@ def check_disk_space():
 ## check if storage breaches safe threshold
 
     if free_percent < DISK_THRESHOLD_PERCENT :
-        alert_msg = f"CRITICAL : Low dist space warning! onle {free_percent:.2f} % remaining "
+        alert_msg = f"CRITICAL : Low dist space warning! only {free_percent:.2f} % remaining "
         print(f"{COLOR_RED}{COLOR_BOLD}{alert_msg}{COLOR_RESET}")
 
         with open(LOG_FILE,"a") as log :
@@ -43,5 +43,5 @@ def check_disk_space():
         print (f"{COLOR_GREEN} disk health st   atus is OK.{COLOR_RESET}")
 
 
-if __name__== "__main__" : ## mean it will call the function directly without import it
+if __name__ == "__main__":  ## mean it will call the function directly without import it
     check_disk_space()
